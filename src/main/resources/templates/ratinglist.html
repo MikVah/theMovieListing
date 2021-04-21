@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Age rating</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+<h1>Age rating</h1>
+<table class="table table-striped">
+	<tbody>
+		<tr>
+			<th>Age ratings</th>
+			
+		</tr>
+		<tr th:each = "rating : ${ratings}">
+			<td th:text = "${rating.name}">
+		
+		</tr>
+	</tbody>
+</table>
+
+<a href="/create" class="btn btn-success">Add a new rating</a>
+
+</body>
+</html>
