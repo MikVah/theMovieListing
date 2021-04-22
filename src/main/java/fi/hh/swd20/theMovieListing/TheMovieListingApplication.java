@@ -29,6 +29,7 @@ public class TheMovieListingApplication {
 			
 			log.info("Save ratings and new movies");
 			
+			// Test data ratings and movies
 			Rating rate1 = new Rating("G - All Ages");
 			rrepo.save(rate1);
 			
@@ -42,8 +43,7 @@ public class TheMovieListingApplication {
 			mrepo.save(new Movie("Spirited Away","Hayao Miyazaki", 2001, 125, "Fantasy", rate2));
 			mrepo.save(new Movie("Parasite","Bong Joon-ho", 2019, 132, "Dark Humor", rate3));
 			
-			//Users/admins
-			
+			// Credentials
 			User user1 = new User("visitor", "$2a$10$k2eDxQs1ckJL23dfJNe28uC3aVAOfP48B9Z5YpdWsnZPsr.5hka26", "VISITOR");
 			User user2 = new User("admin", "$2a$10$QViDekoV4kmuGFlfe4.jIOXkEeqXt8RSMt9HfwB.wmeAoXPHMeSgW", "ADMIN");
 			urepo.save(user1);

@@ -23,6 +23,9 @@ public class MovieRepositoryTest {
 	@Autowired
 	private MovieRepository mrepo;
 	
+	@Autowired
+	private RatingRepository rrepo;
+	
 	@Test
 	public void addNewMovie() {
 		Movie movie = new Movie("Titanic", "James Cameron", 1994, 180, "Romance", new Rating("PG13"));
@@ -36,5 +39,15 @@ public class MovieRepositoryTest {
 		assertThat(movies).hasSize(1);
 		assertThat(movies.get(0).getDirector()).isEqualTo("Bong Joon-ho");
 	}
+
+	// TEST - new rating
+	@Test
+	public void addNewRating() {
+		Rating rating = new Rating("Test");
+		rrepo.save(rating);
+		assertThat(rating.getRatingid()).isNotNull();
+	}
+	
+	
 }
 	

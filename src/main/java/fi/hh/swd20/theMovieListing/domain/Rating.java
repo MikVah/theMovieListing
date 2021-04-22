@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.CascadeType;
 
 import java.util.List;
@@ -18,11 +21,14 @@ public class Rating {
 	private Long ratingid;
 	private String name;
 	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy = "rating")
+	@OneToMany(cascade=CascadeType.PERSIST, mappedBy = "rating")
+	@JsonIgnoreProperties("rating")
 	private List<Movie> movies;
 
 	// CONSTRUCTORS
 	public Rating() {
+		super();
+		this.name = null;
 	}
 
 	public Rating(String name) {

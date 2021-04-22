@@ -24,6 +24,7 @@ public class Movie {
 	private String genre;
 	
 	@ManyToOne
+	@JsonIgnoreProperties("movies")
 	@JoinColumn(name = "ratingid")
 	private Rating rating;
 	
@@ -109,9 +110,9 @@ public class Movie {
 	@Override
 	public String toString() {
 		if (this.rating != null)
-		return "Movie [id=" + id + ", title=" + title + ", director=" + director + ", year=" + year + ", length=" + length + ", genre=" + genre + ", rating =" + this.getRating() +"]";
+		return "Movie [title=" + title + ", director=" + director + ", year=" + year + ", length=" + length + ", genre=" + genre + ", rating =" + this.getRating() +"]";
 		else
-			return "Movie [id=" + id + ", title=" + title + ", director=" + director + ", year=" + year + ", length=" + length + ", genre=" + genre + "]";
+			return "Movie [title=" + title + ", director=" + director + ", year=" + year + ", length=" + length + ", genre=" + genre + "]";
 	}
 	
 }
