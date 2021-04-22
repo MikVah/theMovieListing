@@ -21,7 +21,7 @@ public class Rating {
 	private Long ratingid;
 	private String name;
 	
-	@OneToMany(cascade=CascadeType.PERSIST, mappedBy = "rating")
+	@OneToMany(cascade= {CascadeType.MERGE, CascadeType.PERSIST}, mappedBy = "rating")
 	@JsonIgnoreProperties("rating")
 	private List<Movie> movies;
 

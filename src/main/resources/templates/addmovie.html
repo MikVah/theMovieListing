@@ -32,14 +32,14 @@
 			
 			<div style="clear: both; display: block; height: 10px;"></div>						
 		  	<label for="ratelist">Rating</label>
-			 <select id="ratelist" th:field="*{rating.name}" class="form-control">
+			 <select id="ratelist" th:field="*{rating}" class="form-control">
        			<option th:each="rating: ${ratings}" th:value="${rating.ratingid}" th:text="${rating.name}"></option>
     		</select>
 			
 			
 			
 			
-			<input type="submit" value="Save"></input>
+			<input type="submit" value="Save" class="btn btn-success"></input>
 		
 		</form>
 	</div>
